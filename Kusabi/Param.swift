@@ -11,11 +11,11 @@ public class Body {
     
     let content: Data
     
-    init (string: String, encoding: String.Encoding) {
+    public init (string: String, encoding: String.Encoding) {
         self.content = string.data(using: encoding)!
     }
     
-    init (data: Data) {
+    public init (data: Data) {
         self.content = data
     }
 }
@@ -28,13 +28,13 @@ public class Header {
         var dict: [String: String] = [:]
         
         self.header.forEach {
-            dict.updateValue($0.content.first!.key , forKey: $0.content.first!.value)
+            dict.updateValue($0.content.first!.value , forKey: $0.content.first!.key)
         }
         
         return dict
     }
     
-    init (_ header: [HeaderItem]) {
+    public init (_ header: [HeaderItem]) {
         self.header = header
     }
 }
@@ -43,7 +43,7 @@ public class HeaderItem {
     
     let content: [String: String]
     
-    init (key: String, value: String) {
+    public init (key: String, value: String) {
         self.content = [key: value]
     }
 }
@@ -53,8 +53,8 @@ public class Querys {
     
     let content: [URLQueryItem]
     
-    init (query: Query) {
-        self.content = [query.item()]
+    public init (querys: [Query]) {
+        self.content = querys.map {$0.item()}
     }
 }
 
@@ -68,7 +68,7 @@ public class Query {
         return URLQueryItem(name: name, value: value)
     }
     
-    init (name: String, value: String) {
+    public init (name: String, value: String) {
         
         self.name = name
         

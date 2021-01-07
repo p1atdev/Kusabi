@@ -18,23 +18,23 @@
 		</data>
 		<key>Modules/Kusabi.swiftmodule/Project/arm.swiftsourceinfo</key>
 		<data>
-		DgQfCEWeLoC8TpQW9ghb8a/nTdk=
+		eVdozjrnrT7J0Ioqv4bdNE/78BE=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		YWp3qsd7iIJY5xIWnYbvl4y6YEQ=
+		PrWWHEzZvuBybT5geRqZWDtlRF0=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		YWp3qsd7iIJY5xIWnYbvl4y6YEQ=
+		PrWWHEzZvuBybT5geRqZWDtlRF0=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
 		<data>
-		DgQfCEWeLoC8TpQW9ghb8a/nTdk=
+		eVdozjrnrT7J0Ioqv4bdNE/78BE=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/Project/armv7.swiftsourceinfo</key>
 		<data>
-		DgQfCEWeLoC8TpQW9ghb8a/nTdk=
+		eVdozjrnrT7J0Ioqv4bdNE/78BE=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/Kusabi.swiftmodule/arm.swiftmodule</key>
 		<data>
-		oagJD7O3FoxReVLo6h1JisFhzFc=
+		+hGWV7hDOua0bGEaB1Mei74BgXc=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/Kusabi.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		uvHuDh58zcnFLlSGYlSZCP7+Cbk=
+		TKDDlhoaNMHOW+1Rc0GOlOM3qUY=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/Kusabi.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		uvHuDh58zcnFLlSGYlSZCP7+Cbk=
+		TKDDlhoaNMHOW+1Rc0GOlOM3qUY=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/Kusabi.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		oagJD7O3FoxReVLo6h1JisFhzFc=
+		+hGWV7hDOua0bGEaB1Mei74BgXc=
 		</data>
 		<key>Modules/Kusabi.swiftmodule/armv7.swiftdoc</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/Kusabi.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		oagJD7O3FoxReVLo6h1JisFhzFc=
+		+hGWV7hDOua0bGEaB1Mei74BgXc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -109,55 +109,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DgQfCEWeLoC8TpQW9ghb8a/nTdk=
+			eVdozjrnrT7J0Ioqv4bdNE/78BE=
 			</data>
 			<key>hash2</key>
 			<data>
-			v8CYJ7mILTTx2+l44fROYK53JDxwk9xu/J4mpH5XRL0=
+			2H1nlkC8z2BDcKxp4Zed1E1+NfTbGCPqXUQFZmkTMiU=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YWp3qsd7iIJY5xIWnYbvl4y6YEQ=
+			PrWWHEzZvuBybT5geRqZWDtlRF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			v0FmidyZs3QCmxJoje7E6ORMY3P8VjeIgpo3VN292nU=
+			lqVsGMO1xBk5GBXXJXwJwBlT44YKMq/rvZPxUWZj/p8=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YWp3qsd7iIJY5xIWnYbvl4y6YEQ=
+			PrWWHEzZvuBybT5geRqZWDtlRF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			v0FmidyZs3QCmxJoje7E6ORMY3P8VjeIgpo3VN292nU=
+			lqVsGMO1xBk5GBXXJXwJwBlT44YKMq/rvZPxUWZj/p8=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DgQfCEWeLoC8TpQW9ghb8a/nTdk=
+			eVdozjrnrT7J0Ioqv4bdNE/78BE=
 			</data>
 			<key>hash2</key>
 			<data>
-			v8CYJ7mILTTx2+l44fROYK53JDxwk9xu/J4mpH5XRL0=
+			2H1nlkC8z2BDcKxp4Zed1E1+NfTbGCPqXUQFZmkTMiU=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/Project/armv7.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DgQfCEWeLoC8TpQW9ghb8a/nTdk=
+			eVdozjrnrT7J0Ioqv4bdNE/78BE=
 			</data>
 			<key>hash2</key>
 			<data>
-			v8CYJ7mILTTx2+l44fROYK53JDxwk9xu/J4mpH5XRL0=
+			2H1nlkC8z2BDcKxp4Zed1E1+NfTbGCPqXUQFZmkTMiU=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/arm.swiftdoc</key>
@@ -175,11 +175,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oagJD7O3FoxReVLo6h1JisFhzFc=
+			+hGWV7hDOua0bGEaB1Mei74BgXc=
 			</data>
 			<key>hash2</key>
 			<data>
-			xVyVbmvxUrdSca7gttRFJ6U/h1wxbnChNGNphKwj2fU=
+			jYWLAqaPFxmbm6Dt92kojEeECPRjXyueCq8tI8mD/CU=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -197,11 +197,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uvHuDh58zcnFLlSGYlSZCP7+Cbk=
+			TKDDlhoaNMHOW+1Rc0GOlOM3qUY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZUssuh0aZAn74FNvnCrO63iZz5oNkw74ux0RTH/Ac+s=
+			0o9g6zafTeFhDoj5GC+1rjyycytxyjRmyTW4wiZ77Ak=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/arm64.swiftdoc</key>
@@ -219,11 +219,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uvHuDh58zcnFLlSGYlSZCP7+Cbk=
+			TKDDlhoaNMHOW+1Rc0GOlOM3qUY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZUssuh0aZAn74FNvnCrO63iZz5oNkw74ux0RTH/Ac+s=
+			0o9g6zafTeFhDoj5GC+1rjyycytxyjRmyTW4wiZ77Ak=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -241,11 +241,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oagJD7O3FoxReVLo6h1JisFhzFc=
+			+hGWV7hDOua0bGEaB1Mei74BgXc=
 			</data>
 			<key>hash2</key>
 			<data>
-			xVyVbmvxUrdSca7gttRFJ6U/h1wxbnChNGNphKwj2fU=
+			jYWLAqaPFxmbm6Dt92kojEeECPRjXyueCq8tI8mD/CU=
 			</data>
 		</dict>
 		<key>Modules/Kusabi.swiftmodule/armv7.swiftdoc</key>
@@ -263,11 +263,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oagJD7O3FoxReVLo6h1JisFhzFc=
+			+hGWV7hDOua0bGEaB1Mei74BgXc=
 			</data>
 			<key>hash2</key>
 			<data>
-			xVyVbmvxUrdSca7gttRFJ6U/h1wxbnChNGNphKwj2fU=
+			jYWLAqaPFxmbm6Dt92kojEeECPRjXyueCq8tI8mD/CU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

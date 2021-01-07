@@ -35,16 +35,25 @@ public class Kusabi {
         //ヘッダーをセット
         request.allHTTPHeaderFields = header?.content()
         
+        // セマフォの初期化
+        let semaphore = DispatchSemaphore(value: 0)
+        
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             
             //返す
             completion(KusabiResponse(data: data, response: response, error: error))
             
+            // 処理終了でセマフォをインクリメント
+            semaphore.signal()
         })
         
         //通信
         task.resume()
+        
+        // デクリメントして待つ
+        semaphore.wait()
+        
     }
     
     
@@ -70,7 +79,7 @@ public class Kusabi {
         
     }
     
-    init (URL: URL, cachePolicy: NSURLRequest.CachePolicy, timeOut: TimeInterval) {
+    public init (URL: URL, cachePolicy: NSURLRequest.CachePolicy, timeOut: TimeInterval) {
         self.URL = KusabiURLObject(URL: URL)
         
         self.request = NSMutableURLRequest(
@@ -80,7 +89,7 @@ public class Kusabi {
         )
     }
     
-    init (URL: String, cachePolicy: NSURLRequest.CachePolicy, timeOut: TimeInterval) {
+    public init (URL: String, cachePolicy: NSURLRequest.CachePolicy, timeOut: TimeInterval) {
         self.URL = KusabiURLObject(URL: URL)
         
         self.request = NSMutableURLRequest(
@@ -102,11 +111,11 @@ public class KusabiURLObject {
         return URLComponents(url: self.URL, resolvingAgainstBaseURL: false)!
     }
     
-    init (URL: URL) {
+    public init (URL: URL) {
         self.URL = URL
     }
     
-    init (URL: String) {
+    public init (URL: String) {
         self.URL = NSURL(string: URL)! as URL
     }
 }
@@ -117,7 +126,7 @@ public class KusabiResponse {
     let response: HTTPURLResponse?
     let error: Error?
     
-    init (data: Data?, response: URLResponse?, error: Error?) {
+    public init (data: Data?, response: URLResponse?, error: Error?) {
         self.data = data
         self.response = response as? HTTPURLResponse
         self.error = error

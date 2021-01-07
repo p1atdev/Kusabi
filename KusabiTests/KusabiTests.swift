@@ -21,6 +21,23 @@ class KusabiTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let header: Header = Header([
+            HeaderItem(key: "x-rapidapi-host", value: "covid-193.p.rapidapi.com"),
+            HeaderItem(key: "x-rapidapi-key", value: "b9dbf5087dmsh1d6c19e36c1c6b8p1697e6jsn4af1047106b2")])
+        
+        let query: Querys = Querys(querys: [Query(name: "country", value: "japan")])
+        
+        let kusabi = Kusabi(
+            URL: "https://covid-193.p.rapidapi.com/statistics",
+            cachePolicy: .useProtocolCachePolicy,
+            timeOut: 10.0)
+        
+        kusabi.GET(header: header, querys: query, completion: { result in
+            
+            let jsonString = String(data: result!.data!, encoding: .utf8)!
+            
+            print("Response Data: ", jsonString)
+        })
     }
 
     func testPerformanceExample() throws {

@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
 options: "8499346f433569c405272ae1ba915b9b"
-build_time: [1610002084, 450296000]
+build_time: [1610002723, 790565000]
 inputs:
-  "/Users/shuteiei/Library/Autosave Information/Kusabi/Kusabi/Kusabi.swift": [1609998682, 19069006]
-  "/Users/shuteiei/Library/Autosave Information/Kusabi/Kusabi/Param.swift": [1609998690, 176630403]
+  "/Users/shuteiei/Library/Autosave Information/Kusabi/Kusabi/Kusabi.swift": [1610002716, 140211499]
+  "/Users/shuteiei/Library/Autosave Information/Kusabi/Kusabi/Param.swift": [1610002713, 90108326]

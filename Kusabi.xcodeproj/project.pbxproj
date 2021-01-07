@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3A3BD7F625A70E4900668803 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BD7F525A70E4900668803 /* Parse.swift */; };
 		3AB2423F25A6D8A200DAED50 /* Kusabi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2423525A6D8A100DAED50 /* Kusabi.framework */; };
 		3AB2424425A6D8A200DAED50 /* KusabiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2424325A6D8A200DAED50 /* KusabiTests.swift */; };
 		3AB2424625A6D8A200DAED50 /* Kusabi.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2423825A6D8A100DAED50 /* Kusabi.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A3BD7F525A70E4900668803 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		3AB2423525A6D8A100DAED50 /* Kusabi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kusabi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB2423825A6D8A100DAED50 /* Kusabi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kusabi.h; sourceTree = "<group>"; };
 		3AB2423925A6D8A100DAED50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				3AB2423825A6D8A100DAED50 /* Kusabi.h */,
 				3AB2425125A6D8B100DAED50 /* Kusabi.swift */,
 				3AB2425525A6D8D900DAED50 /* Param.swift */,
+				3A3BD7F525A70E4900668803 /* Parse.swift */,
 				3AB2423925A6D8A100DAED50 /* Info.plist */,
 			);
 			path = Kusabi;
@@ -240,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB2425225A6D8B100DAED50 /* Kusabi.swift in Sources */,
+				3A3BD7F625A70E4900668803 /* Parse.swift in Sources */,
 				3AB2425625A6D8D900DAED50 /* Param.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
