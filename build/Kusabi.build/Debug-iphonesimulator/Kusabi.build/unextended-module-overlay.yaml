@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/shuteiei/Library/Developer/Xcode/DerivedData/Kusabi-dzntffeymfietlgwykonjszcfcus/Build/Products/Debug-iphonesimulator/Kusabi.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/shuteiei/Library/Autosave Information/Kusabi/build/Kusabi.build/Debug-iphonesimulator/Kusabi.build/unextended-module.modulemap",
+    }]
+  }]
+}

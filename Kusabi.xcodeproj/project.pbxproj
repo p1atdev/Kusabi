@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3AB2426225A6DCB700DAED50 /* Kusabi-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3AB2426525A6DCB700DAED50 /* Build configuration list for PBXAggregateTarget "Kusabi-Universal" */;
+			buildPhases = (
+				3AB2426925A6DCCD00DAED50 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Kusabi-Universal";
+			productName = "Kusabi-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3AB2423F25A6D8A200DAED50 /* Kusabi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2423525A6D8A100DAED50 /* Kusabi.framework */; };
 		3AB2424425A6D8A200DAED50 /* KusabiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2424325A6D8A200DAED50 /* KusabiTests.swift */; };
@@ -158,6 +172,9 @@
 					3AB2423D25A6D8A200DAED50 = {
 						CreatedOnToolsVersion = 12.3;
 					};
+					3AB2426225A6DCB700DAED50 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 				};
 			};
 			buildConfigurationList = 3AB2422F25A6D8A100DAED50 /* Build configuration list for PBXProject "Kusabi" */;
@@ -175,6 +192,7 @@
 			targets = (
 				3AB2423425A6D8A100DAED50 /* Kusabi */,
 				3AB2423D25A6D8A200DAED50 /* KusabiTests */,
+				3AB2426225A6DCB700DAED50 /* Kusabi-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +213,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AB2426925A6DCCD00DAED50 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "UNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n \n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n \n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n \n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n \n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n \n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n \n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n \n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3AB2423125A6D8A100DAED50 /* Sources */ = {
@@ -436,6 +474,24 @@
 			};
 			name = Release;
 		};
+		3AB2426325A6DCB700DAED50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3AB2426425A6DCB700DAED50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -462,6 +518,15 @@
 			buildConfigurations = (
 				3AB2424D25A6D8A200DAED50 /* Debug */,
 				3AB2424E25A6D8A200DAED50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AB2426525A6DCB700DAED50 /* Build configuration list for PBXAggregateTarget "Kusabi-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AB2426325A6DCB700DAED50 /* Debug */,
+				3AB2426425A6DCB700DAED50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

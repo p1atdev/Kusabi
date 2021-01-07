@@ -1,0 +1,11 @@
+framework module Kusabi {
+  umbrella header "Kusabi.h"
+
+  export *
+  module * { export * }
+}
+
+module Kusabi.Swift {
+    header "Kusabi-Swift.h"
+    requires objc
+}
