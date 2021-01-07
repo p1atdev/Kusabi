@@ -15,7 +15,7 @@ public class Kusabi {
     var request: NSMutableURLRequest
     
     //MARK: GET
-    func GET(body: Body? = nil, header: Header? = nil, querys: Querys? = nil, completion: @escaping (KusabiResponse?)->()) {
+    public func GET(body: Body? = nil, header: Header? = nil, querys: Querys? = nil, completion: @escaping (KusabiResponse?)->()) {
         
         //クエリーをセット
         if querys != nil {
@@ -58,7 +58,7 @@ public class Kusabi {
     
     
     //MARK: POST
-    func POST(header: Header? = nil, completion: @escaping (KusabiResponse?)->()) {
+    public func POST(header: Header? = nil, completion: @escaping (KusabiResponse?)->()) {
         
         //postにする
         request.httpMethod = "POST"
