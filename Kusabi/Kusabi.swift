@@ -122,9 +122,9 @@ public class KusabiURLObject {
 
 
 public class KusabiResponse {
-    let data: Data?
-    let response: HTTPURLResponse?
-    let error: Error?
+    public let data: Data?
+    public let response: HTTPURLResponse?
+    public let error: Error?
     
     public init (data: Data?, response: URLResponse?, error: Error?) {
         self.data = data
