@@ -26,7 +26,18 @@ class KusabiTests: XCTestCase {
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            let header: Header = Header([
+                HeaderItem(key: "x-rapidapi-host", value: "shorturl-sfy-cx.p.rapidapi.com"),
+                HeaderItem(key: "x-rapidapi-key", value: "b9dbf5087dmsh1d6c19e36c1c6b8p1697e6jsn4af1047106b2")])
+            
+            let kusabi = Kusabi(
+                URL: "https://shorturl-sfy-cx.p.rapidapi.com/?url=https%253A%252F%252Fwww.google.com",
+                cachePolicy: .useProtocolCachePolicy,
+                timeOut: 10.0)
+            
+            kusabi.GET(header: header, completion: { result in
+                print(result!.response!)
+            })
         }
     }
 

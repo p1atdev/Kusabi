@@ -10,6 +10,8 @@
 		3AB2423F25A6D8A200DAED50 /* Kusabi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB2423525A6D8A100DAED50 /* Kusabi.framework */; };
 		3AB2424425A6D8A200DAED50 /* KusabiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2424325A6D8A200DAED50 /* KusabiTests.swift */; };
 		3AB2424625A6D8A200DAED50 /* Kusabi.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2423825A6D8A100DAED50 /* Kusabi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AB2425225A6D8B100DAED50 /* Kusabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2425125A6D8B100DAED50 /* Kusabi.swift */; };
+		3AB2425625A6D8D900DAED50 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2425525A6D8D900DAED50 /* Param.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		3AB2423E25A6D8A200DAED50 /* KusabiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KusabiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB2424325A6D8A200DAED50 /* KusabiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KusabiTests.swift; sourceTree = "<group>"; };
 		3AB2424525A6D8A200DAED50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AB2425125A6D8B100DAED50 /* Kusabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kusabi.swift; sourceTree = "<group>"; };
+		3AB2425525A6D8D900DAED50 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				3AB2423825A6D8A100DAED50 /* Kusabi.h */,
+				3AB2425125A6D8B100DAED50 /* Kusabi.swift */,
+				3AB2425525A6D8D900DAED50 /* Param.swift */,
 				3AB2423925A6D8A100DAED50 /* Info.plist */,
 			);
 			path = Kusabi;
@@ -147,6 +153,7 @@
 				TargetAttributes = {
 					3AB2423425A6D8A100DAED50 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					3AB2423D25A6D8A200DAED50 = {
 						CreatedOnToolsVersion = 12.3;
@@ -194,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB2425225A6D8B100DAED50 /* Kusabi.swift in Sources */,
+				3AB2425625A6D8D900DAED50 /* Param.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		3AB2424A25A6D8A200DAED50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
@@ -357,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.shu17712.Kusabi;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +376,7 @@
 		3AB2424B25A6D8A200DAED50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
@@ -389,6 +401,7 @@
 		3AB2424D25A6D8A200DAED50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
 				INFOPLIST_FILE = KusabiTests/Info.plist;
@@ -407,6 +420,7 @@
 		3AB2424E25A6D8A200DAED50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q2A6VDAQN;
 				INFOPLIST_FILE = KusabiTests/Info.plist;
