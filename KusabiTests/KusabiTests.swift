@@ -19,25 +19,43 @@ class KusabiTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let header: Header = Header([
-            HeaderItem(key: "x-rapidapi-host", value: "covid-193.p.rapidapi.com"),
-            HeaderItem(key: "x-rapidapi-key", value: "b9dbf5087dmsh1d6c19e36c1c6b8p1697e6jsn4af1047106b2")])
         
-        let query: Querys = Querys(querys: [Query(name: "country", value: "japan")])
-        
-        let kusabi = Kusabi(
-            URL: "https://covid-193.p.rapidapi.com/statistics",
-            cachePolicy: .useProtocolCachePolicy,
-            timeOut: 10.0)
-        
-        kusabi.GET(header: header, querys: query, completion: { result in
+        //短縮したurlを取得する
+        func bitlyAPI(longURL: String, then: @escaping (KusabiResponse?) -> ()){
             
-            let jsonString = String(data: result!.data!, encoding: .utf8)!
+            let token = "703c5bc4c4a2e028e7626946f674dfa52fcee533"
             
-            print("Response Data: ", jsonString)
+            let kusabi = Kusabi(URL: "https://api-ssl.bitly.com/v4/shorten", cachePolicy: .reloadIgnoringCacheData, timeOut: 100)
+            
+            let header = Header([HeaderItem(key: "Authorization", value: "Bearer \(token)"), HeaderItem(key: "Content-Type", value: "application/json")])
+            
+            let body = Body(string: "{ \"long_url\": \"\(longURL)\", \"domain\": \"bit.ly\", \"group_guid\": \"o_2mj6cu4932\" }", encoding: .utf8)
+            
+            // セマフォの初期化
+            let semaphore = DispatchSemaphore(value: 0)
+            
+            var response: KusabiResponse?
+            
+            kusabi.GET(body: body, header: header, completion: { result in
+                response = result
+                
+                // 処理終了でセマフォをインクリメント
+                semaphore.signal()
+            })
+            
+            semaphore.wait()
+            
+            //返す
+            then(response)
+            
+        }
+        
+        bitlyAPI(longURL: "https://qiita.com/s_emoto/items/deda5abcb0adc2217e86", then: { response in
+            
+            print(response?.data)
+            
         })
+        
     }
 
     func testPerformanceExample() throws {

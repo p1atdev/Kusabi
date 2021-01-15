@@ -58,13 +58,28 @@ public class Kusabi {
     
     
     //MARK: POST
-    public func POST(header: Header? = nil, completion: @escaping (KusabiResponse?)->()) {
+    public func POST(body: Body? = nil, header: Header? = nil, querys: Querys? = nil, completion: @escaping (KusabiResponse?)->()) {
+        
+        //クエリーをセット
+        if querys != nil {
+            var urlComponents = URL.urlComponents()  //URLComponentsでURLを生成
+            
+            urlComponents.queryItems = querys!.content
+            
+            request = URLRequest(url: urlComponents.url!) as! NSMutableURLRequest
+        }
         
         //postにする
         request.httpMethod = "POST"
         
+        //ボディーをセット
+        request.httpBody = body?.content
+        
         //ヘッダーをセット
         request.allHTTPHeaderFields = header?.content()
+        
+        // セマフォの初期化
+        let semaphore = DispatchSemaphore(value: 0)
         
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
@@ -72,10 +87,15 @@ public class Kusabi {
             //返す
             completion(KusabiResponse(data: data, response: response, error: error))
             
+            // 処理終了でセマフォをインクリメント
+            semaphore.signal()
         })
         
         //通信
         task.resume()
+        
+        // デクリメントして待つ
+        semaphore.wait()
         
     }
     
