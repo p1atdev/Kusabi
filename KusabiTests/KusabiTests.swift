@@ -23,20 +23,20 @@ class KusabiTests: XCTestCase {
         //短縮したurlを取得する
         func bitlyAPI(longURL: String, then: @escaping (KusabiResponse?) -> ()){
             
-            let token = "703c5bc4c4a2e028e7626946f674dfa52fcee533"
+            let kusabi = Kusabi(URL: "https://url-shortener-service.p.rapidapi.com/shorten", cachePolicy: .reloadIgnoringCacheData, timeOut: 100)
             
-            let kusabi = Kusabi(URL: "https://api-ssl.bitly.com/v4/shorten", cachePolicy: .reloadIgnoringCacheData, timeOut: 100)
+            let header = Header([HeaderItem(key: "x-rapidapi-host", value: "url-shortener-service.p.rapidapi.com"),
+                                 HeaderItem(key: "x-rapidapi-key", value: "b9dbf5087dmsh1d6c19e36c1c6b8p1697e6jsn4af1047106b2"),
+                                 HeaderItem(key: "content-type", value: "application/x-www-form-urlencoded")])
             
-            let header = Header([HeaderItem(key: "Authorization", value: "Bearer \(token)"), HeaderItem(key: "Content-Type", value: "application/json")])
-            
-            let body = Body(string: "{ \"long_url\": \"\(longURL)\", \"domain\": \"bit.ly\", \"group_guid\": \"o_2mj6cu4932\" }", encoding: .utf8)
+            let body = Body(string: "url=\(longURL)", encoding: .utf8)
             
             // セマフォの初期化
             let semaphore = DispatchSemaphore(value: 0)
             
             var response: KusabiResponse?
             
-            kusabi.GET(body: body, header: header, completion: { result in
+            kusabi.POST(body: body, header: header, completion: { result in
                 response = result
                 
                 // 処理終了でセマフォをインクリメント
