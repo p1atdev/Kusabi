@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// request body
 public class Body {
     
     let content: Data
@@ -20,6 +21,7 @@ public class Body {
     }
 }
 
+/// request header
 public class Header {
     
     let header: [HeaderItem]
@@ -39,6 +41,7 @@ public class Header {
     }
 }
 
+/// request header item
 public class HeaderItem {
     
     let content: [String: String]
@@ -49,6 +52,7 @@ public class HeaderItem {
 }
 
 
+/// request querys
 public class Querys {
     
     let content: [URLQueryItem]
@@ -58,6 +62,7 @@ public class Querys {
     }
 }
 
+/// request query
 public class Query {
     
     let name: String

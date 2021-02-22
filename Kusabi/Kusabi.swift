@@ -9,12 +9,12 @@ import Foundation
 
 public class Kusabi {
     
-    //対象のURL
+    /// target URL object
     let URL: KusabiURLObject
     
     var request: NSMutableURLRequest
     
-    //MARK: GET
+    /// MARK: Get action
     public func GET(body: Body? = nil, header: Header? = nil, querys: Querys? = nil, completion: @escaping (KusabiResponse?)->()) {
         
         //クエリーをセット
@@ -57,7 +57,7 @@ public class Kusabi {
     }
     
     
-    //MARK: POST
+    /// MARK: Post action
     public func POST(body: Body? = nil, header: Header? = nil, querys: Querys? = nil, completion: @escaping (KusabiResponse?)->()) {
         
         //クエリーをセット
@@ -131,12 +131,14 @@ public class KusabiURLObject {
         return URLComponents(url: self.URL, resolvingAgainstBaseURL: false)!
     }
     
+    ///init url by URL
     public init (URL: URL) {
         self.URL = URL
     }
     
+    ///init url by String
     public init (URL: String) {
-        self.URL = NSURL(string: URL)! as URL
+        self.URL = NSURL(string: URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)! as URL
     }
 }
 
